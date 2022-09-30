@@ -16,7 +16,18 @@ function moveVector(x, y) {
     return { x, y };
 }
 
+function collision(x, y, r) {
+    const length = Math.sqrt(x*x + y*y);
+
+    if (length <= 70 + r) { 
+        return true;
+    }
+
+    return false;
+}
+
 export {
     getSpawnPosition,
     moveVector,
+    collision,
 }
