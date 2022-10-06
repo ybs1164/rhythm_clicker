@@ -1,18 +1,16 @@
 import { stage, fitStageWindow } from './draw/stage.mjs';
 import { circle } from './draw/circle.mjs';
 
-import { createEnemy } from './systems/enemy.mjs';
+import test from '../../notes/test.json';
+import { createNotes } from './systems/note.mjs';
 
 const layer = new Konva.Layer();
 
 layer.add(circle);
 
 let health = 10;
-let enemys = [];
 
-for (let i=0;i<10;i++) {
-    enemys.push(createEnemy((i+1) * 1000, layer));
-}
+let enemys = createNotes(layer, test);
 
 stage.add(layer);
 
@@ -41,19 +39,21 @@ function gameLoop() {
     window.requestAnimationFrame(gameLoop);
 }
 
+function check_rhythm() {
+    enemys = enemys.filter((enemy) => {
+        if (enemy.remainTime > -200
+        && enemy.remainTime < 200) {
+            enemy.sound.play();
+            enemy.shape.hide();
+            return false;
+        }
+        return true;
+    });
+}
+
 window.addEventListener(
     'click',
-    () => {
-        enemys = enemys.filter((enemy) => {
-            const triangle = enemy.shape;
-            if (enemy.remainTime > -200
-             && enemy.remainTime < 200) {
-                triangle.hide();
-                return false;
-            }
-            return true;
-        });
-    }
+    check_rhythm
 );
 
 window.requestAnimationFrame(gameLoop);

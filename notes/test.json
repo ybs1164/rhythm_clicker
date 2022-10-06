@@ -1,0 +1,24 @@
+{
+    "bpm": "90",
+    "loops": [
+        {
+            "type": "repeat",
+            "notes": [
+                "Chord_1",
+                ".",
+                "Chord_2",
+                ".",
+                "Chord_3",
+                ".",
+                "Chord_4",
+                "."
+            ]
+        },
+        {
+            "type": "repeat",
+            "notes": [
+
+            ]
+        }
+    ]
+}

@@ -5,6 +5,7 @@ const circle = new Konva.Circle({
 
 let tween;
 
+// animation of circle
 window.addEventListener(
     'click',
     () => {

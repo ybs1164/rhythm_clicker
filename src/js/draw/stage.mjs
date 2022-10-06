@@ -19,7 +19,7 @@ function fitStageWindow() {
     background.width(stage.width());
     background.height(stage.height());
 
-    background.absolutePosition({ x: 0, y: 0});
+    background.absolutePosition({ x: 0, y: 0 });
 
     stage.offsetX(-stage.width()/2);
     stage.offsetY(-stage.height()/2);
