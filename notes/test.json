@@ -3,22 +3,57 @@
     "loops": [
         {
             "type": "repeat",
+            "color": "yellow",
+            "rotate": 0,
             "notes": [
                 "Chord_1",
-                ".",
                 "Chord_2",
-                ".",
                 "Chord_3",
-                ".",
-                "Chord_4",
-                "."
-            ]
+                "Chord_4"
+            ],
+            "time": 2,
+            "speed": 5
         },
         {
             "type": "repeat",
+            "color": "blue",
+            "rotate": 60,
             "notes": [
-
-            ]
+                "Beat_Kick",
+                ".",
+                ".",
+                ".",
+                "Beat_Kick",
+                "Beat_Kick",
+                ".",
+                "."
+            ],
+            "speed": 3
+        },
+        {
+            "type": "repeat",
+            "color": "purple",
+            "rotate": -60,
+            "notes": [
+                ".",
+                ".",
+                ".",
+                ".",
+                "Beat_Snare",
+                ".",
+                ".",
+                "Beat_Snare",
+                ".",
+                "Beat_Snare",
+                ".",
+                ".",
+                "Beat_Snare",
+                ".",
+                ".",
+                "."
+            ],
+            "time": 0.5,
+            "speed": 4
         }
     ]
 }

@@ -2,12 +2,17 @@ import { createEnemy } from './enemy.mjs';
 
 function createNotes(layer, data) {
     const noteList = [];
-    const bpm = data.bpm | 120;
+    const bpm = data.bpm || 120;
     const loops = data.loops;
 
     loops.forEach((loop) => {
         const type = loop.type;
         const notes = loop.notes;
+        const color = loop.color || "white";
+        const rotate = loop.rotate || 0;
+
+        const timeSpeed = loop.time || 1;
+        const speed = loop.speed || 1;
 
         if (type === "repeat") {
             let time = 3000;
@@ -19,15 +24,16 @@ function createNotes(layer, data) {
                         noteList.push(createEnemy(
                             layer,
                             time,
-                            'yellow',
-                            5,
-                            0,
+                            color,
+                            speed,
+                            rotate,
                             new Howl({
-                                src: "musics/" + note + ".wav"
+                                src: "musics/" + note + ".wav",
+                                html5: true,
                             })
                         ));
                     }
-                    time += 1000 * 60 / bpm;
+                    time += 1000 * 60 / bpm * timeSpeed;
                 });
             }
         }

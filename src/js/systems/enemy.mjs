@@ -15,7 +15,7 @@ function createEnemy(
         rotation: rotation * Math.PI / 180,
         sound,
     };
-    enemy.shape.rotation(rotation * 180 / Math.PI - 90);
+    enemy.shape.rotation(rotation - 90);
     layer.add(enemy.shape);
 
     return enemy;

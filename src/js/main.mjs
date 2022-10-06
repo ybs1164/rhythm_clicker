@@ -18,7 +18,7 @@ function gameLoop() {
     enemys = enemys.filter((enemy) => {
         const triangle = enemy.shape;
         
-        if (enemy.remainTime < -200) {
+        if (enemy.remainTime < -50) {
             health -= 1;
             triangle.hide();
             return false;
@@ -41,8 +41,8 @@ function gameLoop() {
 
 function check_rhythm() {
     enemys = enemys.filter((enemy) => {
-        if (enemy.remainTime > -200
-        && enemy.remainTime < 200) {
+        if (enemy.remainTime > -50
+        && enemy.remainTime < 50) {
             enemy.sound.play();
             enemy.shape.hide();
             return false;
