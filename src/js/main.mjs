@@ -3,8 +3,10 @@ import { circle } from './draw/circle.mjs';
 
 import test from '../../notes/test.json';
 import { createNotes } from './systems/note.mjs';
+import { getSounds } from './systems/music.mjs';
 
 const layer = new Konva.Layer();
+const sounds = getSounds();
 
 layer.add(circle);
 
@@ -18,7 +20,7 @@ function gameLoop() {
     enemys = enemys.filter((enemy) => {
         const triangle = enemy.shape;
         
-        if (enemy.remainTime < -50) {
+        if (enemy.remainTime < -150) {
             health -= 1;
             triangle.hide();
             return false;
@@ -41,9 +43,10 @@ function gameLoop() {
 
 function check_rhythm() {
     enemys = enemys.filter((enemy) => {
-        if (enemy.remainTime > -50
-        && enemy.remainTime < 50) {
-            enemy.sound.play();
+        if (enemy.remainTime > -150
+        && enemy.remainTime < 150) {
+            console.log(enemy.sound);
+            sounds[enemy.sound].play();
             enemy.shape.hide();
             return false;
         }

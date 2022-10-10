@@ -1,5 +1,5 @@
 {
-    "bpm": "90",
+    "bpm": 90,
     "loops": [
         {
             "type": "repeat",

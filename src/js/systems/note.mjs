@@ -27,10 +27,7 @@ function createNotes(layer, data) {
                             color,
                             speed,
                             rotate,
-                            new Howl({
-                                src: "musics/" + note + ".wav",
-                                html5: true,
-                            })
+                            note
                         ));
                     }
                     time += 1000 * 60 / bpm * timeSpeed;
